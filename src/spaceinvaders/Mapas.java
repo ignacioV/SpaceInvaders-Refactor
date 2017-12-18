@@ -54,15 +54,15 @@ public class Mapas {
         mapas[aukstis-1][player.getX()] = player.getAtvaizdas();
         
     }
-    public void placeSuviai(ArrayList ps){
-        this.psuviai=ps;
-        for(Psuviai p:psuviai){
-            if(p.getY()>0){
-                mapas[p.getY()][p.getX()]=p.getAtvaizdas();
-            System.out.println(p.getY()+" "+p.getX());
+    public void placeSuviai(ArrayList suviai){
+        this.psuviai=suviai;
+        for(Psuviai suvis:psuviai){
+            if(suvis.getY()>0){
+                mapas[suvis.getY()][suvis.getX()]=suvis.getAtvaizdas();
+            System.out.println(suvis.getY()+" "+suvis.getX());
             }
             else{
-                mapas[p.getY()][p.getX()]=tuscia;
+                mapas[suvis.getY()][suvis.getX()]=tuscia;
             //System.out.println(p.getY()+" "+p.getX());
             }
         }

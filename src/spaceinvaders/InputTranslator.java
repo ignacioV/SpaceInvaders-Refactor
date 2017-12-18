@@ -5,34 +5,31 @@ import java.util.ArrayList;
 
 public class InputTranslator {
     char inputas;
-    Player p = null;
-    Mapas m = null;
-    Psuviai ps =null;
+    
 
     public void setInputas(char inputas) {
         this.inputas = inputas;
     }
-    public void moveP(Player p,Mapas m,ArrayList ps){
-        this.p=p;
-        this.m=m;
+    public void moveP(Player Player,Mapas map,ArrayList PlayerSuviai){
+        
         
         switch(this.inputas){
             
             case 'a':
-                if(p.getX()>0){
-                    p.setX(p.getX()-1);
+                if(Player.getX()>0){
+                    Player.setX(Player.getX()-1);
                 }
             break;
             case 'd':
-                if(p.getX()<m.getPlotis()-1){
-                    p.setX(p.getX()+1);
+                if(Player.getX()<map.getPlotis()-1){
+                    Player.setX(Player.getX()+1);
                 }
                 
             break;
             case 'w':
-                ps.add(new Psuviai(  p.getX() , m.getAukstis()-1)  );
-                p.setSuviuKiek(p.getSuviuKiek()-1);
-                m.placeSuviai(ps);
+                PlayerSuviai.add(new Psuviai(  Player.getX() , map.getAukstis()-1)  );
+                Player.setSuviuKiek(Player.getSuviuKiek()-1);
+                map.placeSuviai(PlayerSuviai);
             break;
             case 'x':
                 System.out.println("Tu susisprogdinai!");
